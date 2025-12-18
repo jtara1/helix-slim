@@ -1,6 +1,6 @@
 # helix-slim
 
-helix editor slimmed down packaged with nix
+helix editor slimmed down, packaged with nix
 
 this doesn't reduce the compiled helix binary, it only removes additional files bundled with it with the exception of yaml
 

@@ -18,8 +18,7 @@
           postInstall = (oldAttrs.postInstall or "") + ''
             # Remove grammar files (tree-sitter grammars)
             find $out/lib/runtime/grammars -type f ! -name yaml.so -delete
-            wrapProgram $out/bin/hx --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.yaml-language-server ]}
-            wrapProgram $out/bin/hx --set-default HELIX_DEFAULT_RUNTIME : \$HOME/.config/helix/runtime
+            wrapProgram $out/bin/hx --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.yaml-language-server ]} --set-default HELIX_DEFAULT_RUNTIME $out/lib/runtime
           '';
         });
       in

@@ -22,8 +22,16 @@ nix bundle --bundler github:NixOS/bundlers#toRPM .#helix-slim
 
 mkdir bundles
 cp helix-slim-arx bundles/
-cp rpm*/*.rpm bundles/
-cp deb*/*.deb bundles/
+cp rpm-single-helix-slim/*.rpm bundles/
+cp deb-single-helix-slim/*.deb bundles/
+
+function cleanup() {
+  rm helix-slim-arx
+  rm -rf rpm-single-helix-slim
+  rm -rf deb-single-helix-slim
+}
+
+cleanup
 
 echo done
 command ls -valh bundles

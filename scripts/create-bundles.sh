@@ -16,9 +16,9 @@ if [ -d bundles ]; then
   rm -rfi bundles # interactive (-i)
 fi
 
-nix bundle --bundler github:NixOS/bundlers#toArx .#helix-slim
-nix bundle --bundler github:NixOS/bundlers#toDEB .#helix-slim
-nix bundle --bundler github:NixOS/bundlers#toRPM .#helix-slim
+nix bundle --bundler github:NixOS/bundlers#toArx .#helix-slim --print-build-logs
+nix bundle --bundler github:NixOS/bundlers#toDEB .#helix-slim --print-build-logs
+nix bundle --bundler github:NixOS/bundlers#toRPM .#helix-slim --print-build-logs
 
 mkdir bundles
 cp helix-slim-arx bundles/

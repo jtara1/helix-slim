@@ -1,3 +1,9 @@
+# helix-slim ignores
+bundles
+*.deb
+*.rpm
+helix-slim-arx
+
 # Ignore build outputs from performing a nix-build or `nix build` command
 result
 result-*
